@@ -53,6 +53,9 @@ def send_email(subject, body):
 
 webdriver_service = Service('/usr/bin/chromedriver')
 webdriver_options = Options()
+webdriver_options.add_argument('--headless')  # Ensure GUI is off
+webdriver_options.add_argument('--no-sandbox')
+webdriver_options.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome(service=webdriver_service, options=webdriver_options)
 
 # Continuously monitor the webpage
